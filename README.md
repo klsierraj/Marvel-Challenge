@@ -1,7 +1,7 @@
 Initial Commit
 Fetch Characters from api - Done :white_check_mark:
 
-Tasks / TODO
+Tasks / TODO <br>
 Fetch Comics
 Save in LocalStorage
 Delete LocalStorage
