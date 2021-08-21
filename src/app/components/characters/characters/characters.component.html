@@ -1,0 +1,33 @@
+<header>
+    <div class="section header-section">
+        <div class="container">
+            <img  class="logo-header" src="../../../../assets/images/logo-marvel.png">
+        </div>
+
+
+    </div>
+</header>
+
+<section id="content">
+    <div class="section">
+    <div class="container">
+        <div class="section-characters">
+            <div class="container-characters" *ngFor="let character of characters">
+                <img class="img-character" src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}" />
+                <h2>{{character.name}}</h2>
+                <p *ngIf="character.description">
+                    {{character.description | slice:0:100}}...
+                </p>
+                <p *ngIf="!character.description">
+                    Description not found
+                </p>
+                
+
+            </div>
+        </div>
+        <div class="section-favorites">
+
+        </div>
+    </div>
+    </div>
+</section>
