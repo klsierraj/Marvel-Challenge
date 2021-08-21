@@ -2,6 +2,7 @@
     <div class="section header-section">
         <div class="container">
             <img  class="logo-header" src="../../../../assets/images/logo-marvel.png">
+            <input type="text" [(ngModel)]="characterFilter.name" placeholder="Search Character" id="search-character" name="search-character" /> 
         </div>
 
 
@@ -12,7 +13,7 @@
     <div class="section">
     <div class="container">
         <div class="section-characters">
-            <div class="container-characters" *ngFor="let character of characters">
+            <div class="container-characters" *ngFor="let character of characters | filterBy: characterFilter">
                 <img class="img-character" src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}" />
                 <h2>{{character.name}}</h2>
                 <p *ngIf="character.description">
