@@ -1,21 +1,60 @@
-header {
-    background: #2d2727;
-    height: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start
-   
-   
-    
+img.img-character {
+    max-width: 100%;
+    border-radius: 50%;
+    height: 176px;
+    width: 176px;
+    object-fit: cover;
+    margin: -50px 0 30px 0;
+    box-shadow: 0 3px 8px #a7a7a7;
 }
 
-.section {
-padding: 2em;
+.section.section-characters {
+    max-width: 1400px;
+    margin: auto;
 }
-.logo-header{
-    width: 150px;
+
+.header-avatar {
+    display: flex;
+    gap: 20px;
+}
+
+.list-characters {
+    margin-top: 3em;
+}
+.section-favorites h2 {
+    text-align: center;
+}
+
+
+.list-comics a {
+    color: gray;
+    text-decoration: none;
+    font-size: 14px;
+}
+img.img-fluid.favorite-card {
+    width: 300px;
+}
+
+.favorite button {
+   position:absolute;
+   top: -17px;
+    right: -20px;
+    border: 0;
+    background: transparent;
+    border-radius: 30px;
+
+
+}
+
+.favorite {
+    position: relative;
+}
+.favorite a {
+    font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #000000;
+  transition: all .5s ease;
+
 }

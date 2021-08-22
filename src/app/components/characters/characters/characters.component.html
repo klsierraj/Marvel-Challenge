@@ -1,8 +1,14 @@
 <header>
     <div class="section header-section">
-        <div class="container">
-            <img  class="logo-header" src="../../../../assets/images/logo-marvel.png">
-            <input type="text" [(ngModel)]="characterFilter.name" placeholder="Search Character" id="search-character" name="search-character" /> 
+        <div class="container-header">
+            <div class="logo-container">
+                <img  class="logo-header" src="../../../../assets/images/logo-marvel.png">
+            </div>
+            <div class="search-container">
+                <input type="text" [(ngModel)]="characterFilter.name" placeholder="Search Character" id="search-character" name="search-character" /> 
+            </div>
+         
+           
         </div>
 
 
@@ -10,25 +16,91 @@
 </header>
 
 <section id="content">
-    <div class="section">
-    <div class="container">
-        <div class="section-characters">
-            <div class="container-characters" *ngFor="let character of characters | filterBy: characterFilter">
-                <img class="img-character" src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}" />
-                <h2>{{character.name}}</h2>
+<div class="section section-characters">
+
+
+    <div class="container-characters">
+
+
+        <div class="wrapper-characters">
+            <div class="list-characters" *ngFor="let character of characters | filterBy: characterFilter  | paginate: {itemsPerPage: 10, currentPage: p}">
+                <div class="header-avatar">
+                    <img class="img-character" src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}" />
+                    <h2>{{character.name}}</h2>
+                </div>
+               
                 <p *ngIf="character.description">
                     {{character.description | slice:0:100}}...
                 </p>
                 <p *ngIf="!character.description">
                     Description not found
                 </p>
-                
+                <div class="related-comics" *ngIf="character.comics.items.length > 0">
+                    <h3>Related Comics</h3>
+                    <div class="container-comics">
+                        <div class="list-comics" *ngFor="let comic of character.comics.items">
+                            <a href="javascript:void(0)" (click)="getComic(comic.resourceURI)">{{comic.name}}</a> 
+                        </div>
+                    </div>
+                    
+
+                </div>
 
             </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
-        <div class="section-favorites">
 
+
+
+        <div class="section-favorites">
+            <h2><img src="../../../../assets/images/favourites.png"> My Favourites</h2>
+            <button class="random-comics-btn" (click)="getRandomComics()">Add Random Comics</button>
+            <div class="favorite" *ngFor="let favorite of favorites">
+                <button (click)="deleteComic(favorite.id)"> <img src="../../../../assets/images/btn-delete.png"></button>
+                <img class="img-fluid favorite-card" src="{{favorite.thumbnail.path}}.{{favorite.thumbnail.extension}}" alt="{{favorite.title}}" />
+                <div></div>
+                <a href="javascript:void(0)" (click)="getComic(favorite.resourceURI)">{{favorite.title}}</a>
+               
+
+            </div>
+            
         </div>
     </div>
+
+    <div class="modal-marvel" *ngIf="onlyComic">
+        <div>
+            <div class="box-modal-marvel">
+            <div class="wrapper-modal">
+                <button class="close-modal" (click)="closeModal()">X</button>
+                <div class="flex-modal">
+                <div class="col">
+                    <img *ngIf="onlyComic.images.length > 0" class="img-fluid" src="{{onlyComic.images[0].path}}.{{onlyComic.images[0].extension}}" alt="{{onlyComic.title}}" >
+                </div >
+                <div class="col">
+                    <h2>{{onlyComic.title}}</h2>
+                    <p>
+                        {{onlyComic.description}}
+                    </p>
+                </div>
+            </div>
+            </div>
+
+            <div class="modal-btns">
+                <div class="add-favourite">
+                    <button  (click)="saveComic(onlyComic.id, onlyComic)">ADD TO FAVOURITES</button>
+                </div>
+                <div class="buy" *ngIf="onlyComic.prices">
+                    <button>BUY FOR {{onlyComic.prices[0].price}}</button>
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+  
+
     </div>
 </section>

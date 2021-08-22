@@ -87,7 +87,7 @@ deleteComic(id:number) {
        this.onlyComicR = this.comicR.data.results;
 
        for(let i = 0; i <=2; i++) {
-         let randomElement = this.onlyComicR[Math.floor(Math.random()*this.onlyComicR.lenght)];
+         let randomElement = this.onlyComicR[Math.floor(Math.random()*this.onlyComicR.length)];
          this.saveComic(randomElement.id, randomElement)
        }
      }else {
