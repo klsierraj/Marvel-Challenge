@@ -1,4 +1,254 @@
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #F4F4F4;
+    margin: 0;
+    padding: 0;
+   
 }
+header {
+    background: #2d2727;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+   
+    z-index: 1;
+   
+   
+    
+}
+
+.container-header {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.section.header-section {
+    padding: 10px 4em;
+}
+input#search-character {
+    width: 30%;
+    padding: 10px;
+}
+
+
+.container-characters {
+    display: flex;
+    justify-content: center;
+}
+
+
+.container-comics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    row-gap: 30px;
+}
+.wrapper-characters {
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+section#content {
+    margin-top: 10%;
+}
+
+.logo-header{
+    width: 150px;
+}
+.section-favorites h2 {
+    display: flex;
+    gap: 10px;
+}
+button.random-comics-btn {
+    border: 0;
+    background: #e62429;
+    color: white;
+    font-family: 'Poppins';
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.section-favorites {
+    width: 600px;
+}
+
+.ngx-pagination .current {
+    color: #e62429 !important;
+    background: none !important;
+}
+
+.modal-marvel{
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    transition: all .5s ease;
+    z-index: 2;
+}
+
+.box-modal-marvel .wrapper-modal{
+    position: relative;
+    background: #ffffff;
+    padding: 30px;
+    max-width:80%;
+    margin: 0 auto;
+}
+
+.modal-btns{
+    position: relative;
+    background: #ffffff;
+    max-width:80%;
+    margin: 0 auto;
+}
+
+.box-modal-marvel h2{
+    font-weight: 700;
+    font-size: 20px;
+}
+.box-modal-marvel img {
+    max-height: 300px;
+}
+
+.flex-modal {
+    display: flex;
+    gap: 2em;
+}
+button.close-modal {
+    border: 0;
+    background: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 40px;
+    position: absolute;
+    width: 30px;
+    height: 28px;
+    right: -6px;
+    top: -7px;
+}
+
+.add-favourite{
+    width: 50%;
+    float: left;
+}
+
+.add-favourite button{
+    width: 100%;
+    border: 0;
+    display: block;
+    height: 55px;
+    background: #F0F0F0;
+    color: #3D3332;
+    font-weight: 700;
+    background-image: url('./assets/images/btn-favourites-default.png');
+    background-repeat: no-repeat;
+    background-position: left 40px center;
+    transition: all .3s ease;    
+}
+
+.add-favourite button:hover{
+    background: #3D3332;
+    color: #EC1E22;
+    background-image: url('./assets/images/btn-favourites-primary.png');
+    background-repeat: no-repeat;
+    background-position: left 45px center;
+    transition: all .3s ease;
+}
+.buy{
+    width: 50%;
+    float: right;
+}
+
+.buy button{
+    width: 100%;
+    border: 0;
+    display: block;
+    height: 55px;
+    background: #DCDCDC;
+    color: #3D3332;
+    font-weight: 700;
+    background-image: url('./assets/images/shopping-cart-primary.png');
+    background-repeat: no-repeat;
+    background-position: left 60px center;
+    transition: all .3s ease;  
+}
+footer{
+    background: #2d2727;
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+    section#content {
+        margin-top: 10%;
+        padding: 2em;
+    }
+    .section.header-section {
+        background: #2d2727 !important;
+    }
+
+    .container-header {
+     display: flex;
+     flex-direction: column;
+    }
+    input#search-character {
+        width: 100%;
+        padding: 10px;
+    }
+    .wrapper-characters {
+   
+    grid-template-columns: 1fr;
+        
+    }
+
+    .header-avatar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container-comics {
+        grid-template-columns: 1fr;
+    }
+    .container-characters {
+        flex-direction: column;
+    }
+    
+    .section-favorites {
+        width: auto;
+    }
+    .box-modal-marvel img {
+        max-height: 300px;
+        height: 180px;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+    .flex-modal {
+    
+        flex-direction: column;
+    }
+    .add-favourite button {
+        background-image: none;
+    }
+    .add-favourite button:hover{
+        background-image: none;
+    }
+    .buy button {
+        background-image: none;
+    }
+    header .container {
+        display: flex;
+        flex-direction: column;
+    }
+  }
