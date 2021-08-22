@@ -2,12 +2,11 @@ Initial Commit
 Fetch Characters from api - Done :white_check_mark:
 
 Tasks / TODO <br>
-Fetch Comics <br>  Done :white_check_mark:
-Save in LocalStorage <br>  Done :white_check_mark:
-Delete LocalStorage <br>  Done :white_check_mark:
-Render Characters and Comics 
-Pipe Filter  Done :white_check_mark:
-Pipe Pagination
-Add Styles And Responsive 
-Deploy to the server 
+Fetch Comics Done :white_check_mark: <br>  
+Save in LocalStorage Done :white_check_mark:<br>  
+Delete LocalStorage Done :white_check_mark: <br>  
+Render Characters and Comics  <br>
+Pipe Filter  Done :white_check_mark: <br>
+Pipe Pagination Done :white_check_mark: <br>
+Add Styles And Responsive Done :white_check_mark: <br>
 
